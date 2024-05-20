@@ -5,9 +5,329 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: white;
+  text-align: center; 
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.main-header {
+  display: flex;
+  justify-content: center;
+  position: relative; 
+  padding: 20px;
+  background-color: white;
+}
+
+.logo {
+  height: 40px;
+  position: absolute; 
+  left: 20px; 
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: gray;
+  font-size: 18px;
+}
+
+.intro-section {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background-color: white;
+}
+
+.intro-text {
+  flex: 1;
+  padding: 20px;
+  text-align: left;
+  padding-left: 170px;
+}
+
+.intro-text h1 {
+  font-size: 48px; /* Increased font size */
+  margin: 0;
+}
+
+.intro-text p {
+  font-size: 24px; /* Increased font size */
+  margin: 10px 0;
+}
+
+.intro-image {
+  flex: 1;
+  padding: 20px;
+
+}
+
+.intro-image img {
+  max-width: 70%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.about-section, .projects-section {
+  padding: 40px 20px;
+  text-align: left;
+}
+
+.about-section {
+  padding: 60px 40px; /* Increased padding */
+  background-color: #f9f9f9;
+}
+
+
+.about-content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.about-image{
+  max-width: 30%;
+  height: auto;
+  padding-right: 10px;
+}
+
+.about-image img {
+  max-width: 100%;
+}
+
+.about-details {
+  flex: 1;
+  text-align: left;
+}
+
+.experience {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  
+}
+
+.experience h3 {
+  margin-bottom: 10px;
+}
+
+.experience-cells {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.experience-cell {
+  width: calc(100% - 40px); /* Subtract margin from full width */
+  margin-right: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  border-bottom: 1px solid #e0e0e0;
+  font-size: 14px;
+  padding: 5px;
+}
+
+.experience-details {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+.location {
+  font-style: italic;
+}
+
+.thumbnail {
+  width: 120px;
+  
+}
+
+.thumbnail img {
+  border-radius: 8px 0 0 8px;
+  max-height: 75px;
+}
+
+/* Clearfix to handle flex wrapping */
+.experience-cell:nth-child(even) {
+  margin-right: 0;
+}
+
+@media (max-width: 768px) {
+  .experience-cell {
+    width: 100%; /* Make cells full width on smaller screens */
+    margin-right: 0;
+  }
+}
+
+.skill-cells {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.skill-cell p {
+  color: black; /* Set text color to black */
+}
+
+.skill-cell {
+  max-width: 200px;
+  max-height: 40px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  align-items: center; /* Center vertically */
+  text-align: center; /* Center text horizontally */
+}
+
+@media (max-width: 768px) {
+  .skill-cell {
+    width: 50%; /* Make cells half width on smaller screens */
+  }
+}
+
+.index {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 20px;
+}
+
+.index-item {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.software {
+  background-color: #C4E3FC; /* Example color for software */
+}
+
+.language {
+  background-color: #FFC3D7; /* Example color for language */
+}
+
+.medium {
+  background-color: #D6C7FF; /* Example color for medium */
+}
+
+.tabs {
+  display: flex;
+  transition: 0.6s;
+}
+
+.tabs button {
+  padding: 15px 0; /* Increase padding for larger buttons */
+  cursor: pointer;
+  border: none;
+  border-bottom: 2px solid #908e95;
+  background-color: #F9F9F9;
+  color: #908e95 ;
+  font-size: 18px; /* Increase font size */
+  width: 100%; /* Set tabs to full width */
+  text-align: center; /* Center align text */
+  transition: 0.6s;
+}
+
+.tabs button.active {
+  color: #443A68;
+  border-bottom: 4px solid #443A68;
+  font-weight: bold;
+}
+
+.tab-content {
+  padding: 20px;
+}
+
+.projects-section {
+  padding: 40px 20px;
+  text-align: left;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, calc(33.33% - 20px)); /* Three cells across */
+  grid-auto-rows: calc(50vh - 20px); /* Two cells down */
+  gap: 20px;
+}
+
+.project-cell {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #ccc; /* Light gray border */
+  transition: 0.4s; /* Smooth transition for hover effect */
+}
+
+.project-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* Maintain aspect ratio and cover the space */
+  transition: 0.4s; /* Smooth transition for hover effect */
+}
+
+.project-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 25%; /* One-third of the cell height */
+  padding: 10px;
+  background-color: white; /* White background */
+  text-align: center;
+  overflow: hidden; /* Ensure the footer content does not overflow */
+  transition: 0.4s; /* Smooth transition for hover effect */
+  opacity: 90%;
+}
+
+.project-cell:hover {
+  background-color: #D6C7FF;
+  .project-image {
+    opacity: 60%;
+  }
+  .project-footer {
+    opacity: 0%;
+    color: white;
+  }
+}
+
+h1, h2 {
+  color: #333;
+}
+
+p {
+  color: #666;
+}
+
+.social-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: white;
+}
+
+.social-icon {
+  margin: 0 10px;
+  color: #333;
+  font-size: 24px;
+  transition: color 0.3s;
+}
+
+.social-icon:hover {
+  color: #D6C7FF; /* LinkedIn color */
+}
+.social-icon:nth-child(2):hover {
+  color: #E1306C; /* Instagram color */
+}
+.social-icon:nth-child(3):hover {
+  color: #D44638; /* Email color */
 }
