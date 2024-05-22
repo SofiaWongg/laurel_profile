@@ -1,0 +1,10 @@
+.project-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Align items in the center */
+}
+
+.project-page img {
+  max-width: 600px;
+  margin-bottom: 20px; /* Add space between images */
+}
